@@ -9,3 +9,4 @@
 /*.img.xz
 /*.img.xz.sha1
 /config.mk
+*.DS_Store
