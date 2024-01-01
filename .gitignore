@@ -1,0 +1,11 @@
+/.cache/
+/.build/
+/.built.conf
+/base/*.tgz*
+/base/*.img*
+/images/
+/*.img
+/*.img.sha1
+/*.img.xz
+/*.img.xz.sha1
+/config.mk

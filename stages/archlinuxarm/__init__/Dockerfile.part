@@ -1,0 +1,5 @@
+FROM scratch
+%ADD_BASE_ROOTFS_TGZ%
+
+RUN mkdir -p /etc/pacman.d/hooks \
+	&& ln -s /dev/null /etc/pacman.d/hooks/30-systemd-tmpfiles.hook
