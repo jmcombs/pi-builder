@@ -165,6 +165,7 @@ $ make
 The following are a list of ToDo items for this project:
 
 -   [ ] Update `Makefile` to support new method of image building for SD cards
+-   [ ] Update `Makefile` clean process
 -   [ ] Update `README` to reflect new build process
 -   [ ] Update `stages` to reflect changes from previous repo
 -   [ ] Update `pi-builder-toolbox` `download-image.py` to go back to `losetup` method of mounting images
