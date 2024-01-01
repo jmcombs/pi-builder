@@ -166,6 +166,7 @@ The following are a list of ToDo items for this project:
 
 -   [ ] Update `Makefile` to support new method of image building for SD cards
 -   [ ] Update `Makefile` logic to fix build process passing incorrect repo repository when assembling Dockerfile
+-   [ ] Update `Makefile` logic to validate `BOARD` and `OS` variables
 -   [ ] Resolve issue with PiKVM repo not working on `aarch64` builds
 -   [ ] Update `Makefile` clean process
 -   [ ] Update `README` to reflect new build process
