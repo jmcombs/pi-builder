@@ -189,6 +189,10 @@ rpi3: BOARD=rpi3
 rpi4: BOARD=rpi4
 zero2w: BOARD=zero2w
 
+# Get the current uid and gid
+UID := $(shell id -u)
+GID := $(shell id -g)
+
 # Target to build Arch-ARM rootfs with pre-defined config
 rpi2 rpi3 rpi4 zero2w: os
 
@@ -292,7 +296,9 @@ base: $(__DEP_TOOLBOX)
 				--arch=$(ARCH) \
 				--board=$(BOARD) \
 				--output-dir=/root/base \
-				--cache-dir=/root/$(_CACHE_DIR)
+				--cache-dir=/root/$(_CACHE_DIR) \
+				--uid=$(UID) \
+				--gid=$(GID)
 	$(call say,"Base rootfs is ready")
 
 
@@ -310,6 +316,7 @@ clean:
 extract: $(__DEP_TOOLBOX)
 	$(call check_build)
 	$(call say,"Extracting image from Docker")
+	mkdir -p $(_IMAGE_DIR)
 	$(call cachetag,$(_IMAGE_DIR))
 	$(DOCKER_RUN) \
 		$(_CACHE_VOLUME_OPTS_SAVE) \
@@ -347,7 +354,6 @@ image: $(__DEP_TOOLBOX) extract
 	$(call check_build)
 	$(call say,"Creating image $(IMAGE)")
 	$(call remove_image)
-	mkdir -p $(_IMAGE_DIR)
 	cat $(DISK) | $(DOCKER_RUN_INT) \
 			--volume=/dev:/root/dev \
 			--privileged \

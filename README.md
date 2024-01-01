@@ -167,6 +167,7 @@ The following are a list of ToDo items for this project:
 -   [ ] Update `Makefile` to support new method of image building for SD cards
 -   [ ] Update `Makefile` clean process
 -   [ ] Update `README` to reflect new build process
+-   [ ] Update `README` to reflect requirement for qemu-user-static on Linux hosts
 -   [ ] Update `stages` to reflect changes from previous repo
 -   [ ] Update `pi-builder-toolbox` `download-image.py` to go back to `losetup` method of mounting images
 -   [ ] Update `pi-builder-toolbox` `download-image.py` to use `_run` function or similar for better debugging of commands
